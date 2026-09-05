@@ -44,7 +44,7 @@ editor "Draw 9-patch" (clic derecho sobre el archivo → Open in Editor).
 2. Deja que Android Studio sincronice Gradle (puede pedirte generar el
    wrapper de Gradle si falta `gradlew`; acepta la sugerencia o usa
    *File > Sync Project with Gradle Files*).
-3. Ejecuta la app en un emulador o dispositivo (▶ Run 'app').
+3. Ejecuta la app en un emulador o dispositivo ( Run 'app').
 4. Para probar los idiomas, cambia el idioma del sistema del emulador.
 5. Para probar tamaños de pantalla, prueba con distintos AVDs (celular,
    tablet de 7", tablet de 10", TV) en modo vertical y horizontal.
