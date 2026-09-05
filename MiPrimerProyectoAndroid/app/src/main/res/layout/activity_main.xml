@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_cielo">
+
+    <!--
+        El fondo (bg_cielo.9.png) es un nine-patch: solo el cielo se estira,
+        tanto horizontal como verticalmente. La franja de nubes + el
+        marcianito Android se mantienen con su tamaño original sin
+        deformarse sin importar el tamaño de pantalla.
+    -->
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:textColor="@color/text_white"
+        android:textStyle="bold"
+        android:textSize="@dimen/welcome_text_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnEnter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_button"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/button_text_size"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_button_entrar"
+        android:paddingStart="@dimen/button_padding_h"
+        android:paddingEnd="@dimen/button_padding_h"
+        android:paddingTop="@dimen/button_padding_v"
+        android:paddingBottom="@dimen/button_padding_v"
+        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/anchorRobot"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Ancla invisible: mantiene el bloque de texto/boton centrado sobre
+         la zona fija del marcianito, la cual el nine-patch nunca estira -->
+    <View
+        android:id="@+id/anchorRobot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
